@@ -1,0 +1,1084 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+
+    --bg: #090609;
+    --burgundy: #3a101f;
+    --wine: #5b1730;
+
+    --pink: #ff6f91;
+    --soft-pink: #ffb4c6;
+
+    --gold: #e7b86a;
+    --cream: #fff4e8;
+
+    --text: #fff7f3;
+    --muted: #cdbec3;
+
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            #32101e 0%,
+            #150910 35%,
+            #090609 75%
+        );
+
+    color: var(--text);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================
+   BACKGROUND
+===================================== */
+
+.background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.glow {
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    opacity: .22;
+}
+
+
+.glow-one {
+
+    background: #b32659;
+
+    top: -200px;
+    left: -150px;
+}
+
+
+.glow-two {
+
+    background: #6e2a86;
+
+    right: -180px;
+    top: 35%;
+}
+
+
+.glow-three {
+
+    background: #d8834f;
+
+    bottom: -250px;
+    left: 30%;
+}
+
+
+/* stars */
+
+.stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.7) 1px,
+            transparent 1px
+        );
+
+    background-size: 90px 90px;
+
+    opacity: .12;
+}
+
+
+/* =====================================
+   PAGE
+===================================== */
+
+.page {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    padding:
+        70px
+        20px
+        100px;
+}
+
+
+/* =====================================
+   TOP LABEL
+===================================== */
+
+.eyebrow {
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: var(--soft-pink);
+
+    margin-bottom: 22px;
+
+    animation: fadeDown .8s ease;
+}
+
+
+/* =====================================
+   TITLE
+===================================== */
+
+h1 {
+
+    text-align: center;
+
+    font-size:
+        clamp(42px, 8vw, 78px);
+
+    font-weight: 600;
+
+    line-height: .95;
+
+    letter-spacing: -3px;
+
+    max-width: 850px;
+
+    animation: fadeDown .9s ease;
+}
+
+
+h1 span {
+
+    display: block;
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size:
+        clamp(60px, 10vw, 100px);
+
+    color: var(--pink);
+
+    font-weight: 600;
+
+    letter-spacing: 0;
+
+    margin-top: 5px;
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin-top: 25px;
+
+    margin-bottom: 40px;
+
+    animation: fadeDown 1s ease;
+}
+
+
+/* =====================================
+   BIRTHDAY CARD
+===================================== */
+
+.birthday-card {
+
+    position: relative;
+
+    width:
+        min(920px, 94vw);
+
+    padding:
+        40px 42px 25px;
+
+    border-radius: 30px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(67,20,35,.88),
+            rgba(18,8,14,.94)
+        );
+
+    box-shadow:
+        0 35px 100px rgba(0,0,0,.55),
+        inset 0 1px rgba(255,255,255,.08);
+
+    overflow: hidden;
+
+    animation:
+        cardAppear 1.1s cubic-bezier(.2,.8,.2,1);
+}
+
+
+/* card decorative glow */
+
+.card-glow {
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: #ff4f79;
+
+    opacity: .07;
+
+    filter: blur(60px);
+
+    top: -150px;
+    right: -80px;
+
+    pointer-events: none;
+}
+
+
+/* =====================================
+   CARD TOP
+===================================== */
+
+.card-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+
+.tiny-label {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #a99ba0;
+}
+
+
+.heart {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    background:
+        rgba(255,111,145,.12);
+
+    border:
+        1px solid rgba(255,111,145,.3);
+
+    font-size: 19px;
+
+    box-shadow:
+        0 0 25px rgba(255,111,145,.15);
+
+    animation:
+        heartbeat 2s ease-in-out infinite;
+}
+
+
+/* =====================================
+   MESSAGE
+===================================== */
+
+.message {
+
+    max-width: 650px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.message .script {
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    color: var(--pink);
+
+    font-size: 32px;
+
+    margin-bottom: -5px;
+}
+
+
+.message h2 {
+
+    font-size: 34px;
+
+    font-weight: 500;
+
+    margin-bottom: 15px;
+}
+
+
+.message > p:last-child {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+
+/* =====================================
+   GIFTS
+===================================== */
+
+.gifts {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+
+/* =====================================
+   GIFT CARD
+===================================== */
+
+.gift-card {
+
+    position: relative;
+
+    min-height: 190px;
+
+    padding: 25px 18px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.035);
+
+    color: white;
+
+    cursor: pointer;
+
+    text-align: center;
+
+    font-family: inherit;
+
+    transition:
+        transform .35s ease,
+        background .35s ease,
+        border .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.gift-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    background:
+        rgba(255,255,255,.075);
+
+    border-color:
+        rgba(255,255,255,.18);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.3);
+}
+
+
+.gift-card:active {
+
+    transform:
+        translateY(-4px)
+        scale(.98);
+}
+
+
+/* featured */
+
+.gift-card.featured {
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,111,145,.13),
+            rgba(231,184,106,.08)
+        );
+
+    border-color:
+        rgba(255,111,145,.25);
+}
+
+
+/* =====================================
+   GIFT ICON
+===================================== */
+
+.gift-icon {
+
+    width: 65px;
+    height: 65px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+
+.gift-icon.pink {
+
+    background:
+        rgba(255,111,145,.12);
+
+    box-shadow:
+        inset 0 0 30px rgba(255,111,145,.08);
+}
+
+
+.gift-icon.gold {
+
+    background:
+        rgba(231,184,106,.12);
+
+    box-shadow:
+        inset 0 0 30px rgba(231,184,106,.08);
+}
+
+
+.gift-icon.purple {
+
+    background:
+        rgba(173,117,255,.12);
+
+    box-shadow:
+        inset 0 0 30px rgba(173,117,255,.08);
+}
+
+
+/* =====================================
+   GIFT TEXT
+===================================== */
+
+.gift-number {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: #82757a;
+
+    margin-bottom: 5px;
+}
+
+
+.gift-card strong {
+
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: 500;
+}
+
+
+.gift-card small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: var(--pink);
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.card-footer {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+    padding-top: 20px;
+
+    border-top:
+        1px solid rgba(255,255,255,.06);
+
+    color: #766a70;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.card-footer span:nth-child(2) {
+
+    color: var(--pink);
+}
+
+
+/* =====================================
+   BOTTOM
+===================================== */
+
+.bottom-hint {
+
+    margin-top: 30px;
+
+    color: #766a70;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =====================================
+   MODAL
+===================================== */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 100;
+
+    visibility: hidden;
+
+    opacity: 0;
+
+    transition:
+        opacity .35s ease,
+        visibility .35s ease;
+}
+
+
+.modal.active {
+
+    visibility: visible;
+
+    opacity: 1;
+}
+
+
+.modal-backdrop {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(4,2,4,.88);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+
+/* =====================================
+   LETTER
+===================================== */
+
+.letter {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(520px, 94vw);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 50px 40px;
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffaf5,
+            #f3e5d7
+        );
+
+    color: #32191f;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.7);
+
+    transform:
+        scale(.7)
+        translateY(30px)
+        rotate(-2deg);
+
+    transition:
+        transform .5s cubic-bezier(.2,.9,.2,1);
+}
+
+
+.modal.active .letter {
+
+    transform:
+        scale(1)
+        translateY(0)
+        rotate(0);
+}
+
+
+.close-button {
+
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(0,0,0,.06);
+
+    color: #32191f;
+
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================
+   LETTER TYPOGRAPHY
+===================================== */
+
+.letter .letter-tag {
+
+    color: #a34a63;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 12px;
+}
+
+
+.letter h2 {
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 48px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    margin-bottom: 25px;
+}
+
+
+.letter p {
+
+    font-family:
+        "Caveat",
+        cursive;
+
+    font-size: 25px;
+
+    line-height: 1.35;
+
+    margin-bottom: 18px;
+}
+
+
+.signature {
+
+    text-align: right;
+
+    font-size: 30px !important;
+
+    margin-top: 30px;
+}
+
+
+/* =====================================
+   CONFETTI
+===================================== */
+
+.confetti-piece {
+
+    position: fixed;
+
+    width: 8px;
+    height: 12px;
+
+    top: -20px;
+
+    z-index: 200;
+
+    pointer-events: none;
+
+    animation:
+        confettiFall linear forwards;
+}
+
+
+@keyframes confettiFall {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px)
+            scale(.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+}
+
+
+@keyframes heartbeat {
+
+    0%, 100% {
+
+        transform: scale(1);
+
+    }
+
+    10% {
+
+        transform: scale(1.1);
+
+    }
+
+    20% {
+
+        transform: scale(1);
+
+    }
+
+    30% {
+
+        transform: scale(1.1);
+
+    }
+
+    40% {
+
+        transform: scale(1);
+
+    }
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+
+    .page {
+
+        padding:
+            45px 15px 70px;
+    }
+
+
+    .eyebrow {
+
+        font-size: 9px;
+
+        letter-spacing: 2.5px;
+    }
+
+
+    h1 {
+
+        letter-spacing: -2px;
+    }
+
+
+    .subtitle {
+
+        font-size: 13px;
+    }
+
+
+    .birthday-card {
+
+        padding:
+            30px 18px 20px;
+
+        border-radius: 24px;
+    }
+
+
+    .message h2 {
+
+        font-size: 29px;
+    }
+
+
+    .message .script {
+
+        font-size: 28px;
+    }
+
+
+    .gifts {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 12px;
+
+        margin-top: 30px;
+    }
+
+
+    .gift-card {
+
+        min-height: 115px;
+
+        display: grid;
+
+        grid-template-columns:
+            65px 1fr;
+
+        grid-template-rows:
+            auto auto;
+
+        column-gap: 15px;
+
+        text-align: left;
+
+        align-items: center;
+
+        padding: 15px;
+    }
+
+
+    .gift-icon {
+
+        grid-row:
+            1 / 3;
+
+        margin: 0;
+    }
+
+
+    .gift-number {
+
+        margin: 0;
+    }
+
+
+    .gift-card strong {
+
+        font-size: 14px;
+    }
+
+
+    .gift-card small {
+
+        margin-top: 3px;
+    }
+
+
+    .letter {
+
+        padding:
+            45px 25px 35px;
+    }
+
+
+    .letter h2 {
+
+        font-size: 42px;
+    }
+
+
+    .letter p {
+
+        font-size: 23px;
+    }
+
+}

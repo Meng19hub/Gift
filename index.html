@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Little Something For You ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="background">
+
+        <div class="glow glow-one"></div>
+        <div class="glow glow-two"></div>
+        <div class="glow glow-three"></div>
+
+        <div class="stars"></div>
+
+    </div>
+
+
+    <!-- Main Page -->
+    <main class="page">
+
+        <!-- Small top text -->
+        <div class="eyebrow">
+            A LITTLE SURPRISE FOR YOU
+        </div>
+
+
+        <!-- Main heading -->
+        <h1>
+            Happy Birthday,
+            <span>Beautiful</span> ❤️
+        </h1>
+
+
+        <p class="subtitle">
+            I couldn't just say "happy birthday" and leave it at that.
+            <br>
+            So I made you something instead.
+        </p>
+
+
+        <!-- Main birthday card -->
+        <section class="birthday-card">
+
+            <div class="card-glow"></div>
+
+            <div class="card-top">
+
+                <span class="tiny-label">
+                    FOR SOMEONE SPECIAL
+                </span>
+
+                <div class="heart">
+                    ♥
+                </div>
+
+            </div>
+
+
+            <div class="message">
+
+                <p class="script">
+                    Here's a little
+                </p>
+
+                <h2>
+                    birthday adventure
+                </h2>
+
+                <p>
+                    Three little surprises are waiting for you.
+                    Take your time and open whichever one
+                    catches your attention first.
+                </p>
+
+            </div>
+
+
+            <!-- Gifts -->
+            <div class="gifts">
+
+                <!-- Gift 1 -->
+                <button
+                    class="gift-card"
+                    onclick="openGift(1)">
+
+                    <div class="gift-icon pink">
+                        🎁
+                    </div>
+
+                    <span class="gift-number">
+                        01
+                    </span>
+
+                    <strong>
+                        A little letter
+                    </strong>
+
+                    <small>
+                        Open me
+                    </small>
+
+                </button>
+
+
+                <!-- Gift 2 -->
+                <button
+                    class="gift-card featured"
+                    onclick="openGift(2)">
+
+                    <div class="gift-icon gold">
+                        💌
+                    </div>
+
+                    <span class="gift-number">
+                        02
+                    </span>
+
+                    <strong>
+                        Something special
+                    </strong>
+
+                    <small>
+                        Open me
+                    </small>
+
+                </button>
+
+
+                <!-- Gift 3 -->
+                <button
+                    class="gift-card"
+                    onclick="openGift(3)">
+
+                    <div class="gift-icon purple">
+                        ✨
+                    </div>
+
+                    <span class="gift-number">
+                        03
+                    </span>
+
+                    <strong>
+                        One more thing
+                    </strong>
+
+                    <small>
+                        Open me
+                    </small>
+
+                </button>
+
+            </div>
+
+
+            <div class="card-footer">
+                <span>made with love</span>
+                <span>♡</span>
+                <span>just for you</span>
+            </div>
+
+        </section>
+
+
+        <p class="bottom-hint">
+            ✦ Take your pick ✦
+        </p>
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- LETTER MODAL -->
+    <!-- ================================= -->
+
+    <div
+        class="modal"
+        id="modal">
+
+        <div class="modal-backdrop"></div>
+
+        <div class="letter">
+
+            <button
+                class="close-button"
+                onclick="closeGift()">
+                ×
+            </button>
+
+            <div id="letterContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Confetti container -->
+    <div id="confetti"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
